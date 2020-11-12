@@ -22,5 +22,6 @@ multibranch:
       repoOwner: ${github_repo_owner}
       repository: ${github_repo}
       credentialsId: ${github_creds}
+  markerFile: pom.xml
   orphanedItemStrategy:
     daysToKeep: 3
