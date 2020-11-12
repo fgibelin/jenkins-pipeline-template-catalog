@@ -1,5 +1,5 @@
 version: 1
-name: A Multibranch Pipeline for Spring applications
+name: Multibranch Pipeline for Spring applications from Github
 type: pipeline-template
 templateType: MULTIBRANCH
 parameters:
@@ -16,6 +16,8 @@ parameters:
 multibranch:
   branchSource:
     github:
+      repoOwner: fgibelin
       repository: ${github_repo}
+      credentialsId: ${github_creds}
   orphanedItemStrategy:
     daysToKeep: 3
