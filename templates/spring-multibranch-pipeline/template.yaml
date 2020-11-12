@@ -1,5 +1,5 @@
 version: 1
-name: A Multibranch Pipeline for Sping applications
+name: A Multibranch Pipeline for Spring applications
 type: pipeline-template
 templateType: MULTIBRANCH
 parameters:
@@ -17,6 +17,5 @@ multibranch:
   branchSource:
     github:
       repository: ${github_repo}
-      credentialsId: ${github_creds}
   orphanedItemStrategy:
     daysToKeep: 3
