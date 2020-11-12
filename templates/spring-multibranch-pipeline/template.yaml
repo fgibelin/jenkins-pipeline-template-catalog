@@ -3,20 +3,23 @@ name: Multibranch Pipeline for Spring applications from Github
 type: pipeline-template
 templateType: MULTIBRANCH
 parameters:
-  - name: emailRecipient
+  - name: github_repo_owner
     type: string
-    displayName: Email address to be used for sending build notifications
+    displayName: GitHub repository owner
   - name: github_repo
     type: string
-    displayName: Spring project name
+    displayName: GitHub repository name
   - name: github_creds
     displayName: GitHub Credentials ID if needed
     type: credentials
     defaultValue: github-creds-example
+  - name: emailRecipient
+    type: string
+    displayName: Email address to be used for sending build notifications
 multibranch:
   branchSource:
     github:
-      repoOwner: spring-projects
+      repoOwner: ${github_repo_owner}
       repository: ${github_repo}
       credentialsId: ${github_creds}
   orphanedItemStrategy:
