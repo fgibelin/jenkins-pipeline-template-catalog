@@ -8,7 +8,7 @@ parameters:
     displayName: Email address to be used for sending build notifications
   - name: github_repo
     type: string
-    displayName: GitHub HTTPS repo for Sping application
+    displayName: Spring project name
   - name: github_creds
     displayName: GitHub Credentials ID if needed
     type: credentials
