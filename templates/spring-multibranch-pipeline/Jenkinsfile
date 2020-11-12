@@ -10,7 +10,7 @@ pipeline {
         stage ("Compile") {
             steps {
                 container('maven') {
-                    git credentialsId: "${github_creds}" , url: "${github_repo}"
+                    checkout scm
                     withMaven(globalMavenSettingsConfig: 'maven-settings',
                               options: [junitPublisher(disabled: true, healthScaleFactor: 1.0)],
                               publisherStrategy: 'EXPLICIT') {
