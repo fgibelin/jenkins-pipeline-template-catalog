@@ -16,7 +16,7 @@ parameters:
 multibranch:
   branchSource:
     github:
-      repoOwner: fgibelin
+      repoOwner: fgibelin-orga
       repository: ${github_repo}
       credentialsId: ${github_creds}
   orphanedItemStrategy:
