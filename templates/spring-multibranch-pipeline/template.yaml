@@ -15,7 +15,8 @@ parameters:
     defaultValue: github-creds-example
 multibranch:
   branchSource:
-    git:
-      remote: ${github_repo}
+    github:
+      repository: ${github_repo}
+      credentialsId: ${github_creds}
   orphanedItemStrategy:
     daysToKeep: 3
