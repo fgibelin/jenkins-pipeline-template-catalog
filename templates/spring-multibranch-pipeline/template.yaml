@@ -1,0 +1,21 @@
+version: 1
+name: A Multibranch Template with Orphaned Items
+type: pipeline-template
+templateType: MULTIBRANCH
+parameters:
+  - name: emailRecipient
+    type: string
+    displayName: Email address to be used for sending build notifications
+  - name: github_repo
+    type: string
+    displayName: GitHub HTTPS repo for Sping application
+  - name: github_creds
+    displayName: GitHub Credentials ID if needed
+    type: credentials
+    defaultValue: github-creds-example
+multibranch:
+  branchSource:
+    git:
+      remote: ${github_repo}
+  orphanedItemStrategy:
+    daysToKeep: 3
