@@ -37,7 +37,7 @@ pipeline {
                         withMaven(globalMavenSettingsConfig: 'maven-settings',
                               options: [junitPublisher(disabled: true, healthScaleFactor: 1.0)],
                               publisherStrategy: 'EXPLICIT') {
-                            sh 'mvn -DskipTests=true -Dsonar.host.url=http://sonarqube:8080 sonar:sonar'
+                            sh 'mvn -DskipTests=true -Dsonar.host.url=${SONAR_HOST_URL} sonar:sonar'
                         }
                     }
                 }
