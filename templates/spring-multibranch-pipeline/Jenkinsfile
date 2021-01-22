@@ -59,9 +59,6 @@ pipeline {
                         artifactId = readMavenPom().getArtifactId()
                         artifactVersion = readMavenPom().getVersion()
                     }
-                    rtServer (
-                        id: 'Artifactory'
-                    )
                     rtUpload (
                         serverId: 'Artifactory',
                         spec: """{
