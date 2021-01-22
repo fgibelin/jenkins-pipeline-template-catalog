@@ -60,11 +60,7 @@ pipeline {
                         artifactVersion = readMavenPom().getVersion()
                     }
                     rtServer (
-                        id: 'Artifactory',
-                        url: 'http://artifactory:8082/artifactory',
-                        credentialsId: 'artifactory-admin',
-                        bypassProxy: true,
-                        timeout: 300
+                        id: 'Artifactory'
                     )
                     rtUpload (
                         serverId: 'Artifactory',
